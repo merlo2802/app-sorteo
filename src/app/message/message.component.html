@@ -1,0 +1,12 @@
+<ion-item *ngIf="message" [detail]="false">
+  <div slot="start" [class]="!message.read ? 'dot dot-unread' : 'dot'"></div>
+  <ion-label class="ion-text-wrap">
+    <h2>
+      {{ message.nombre }}
+      <span class="date">
+        <ion-icon name="chevron-forward" size="small" *ngIf="isIos()"></ion-icon>
+      </span>
+    </h2>
+  </ion-label>
+  <ion-badge *ngIf="visible" slot="end">{{ message.numero }}</ion-badge>
+  </ion-item>
